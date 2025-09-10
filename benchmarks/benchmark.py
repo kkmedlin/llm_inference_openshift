@@ -15,16 +15,20 @@ def benchmark_model(model_name="distilgpt2", prompt="Hello world", max_new_token
 
     # Run inference and time it
     start_time = time.time()
-    _ = model.generate(**inputs, max_new_tokens=max_new_tokens)
+    outputs = model.generate(**inputs, max_new_tokens=max_new_tokens)
     end_time = time.time()
 
     latency = end_time - start_time
-    print(f"Inference latency: {latency:.3f} seconds")
 
-    return {"model": model_name, "prompt": prompt, "latency_sec": latency}
+    # Decode output tokens to text
+    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    print(f"Inference latency: {latency:.3f} seconds")
+    print(f"Generated text: {generated_text}\n")
+
+    return {"model": model_name, "prompt": prompt, "latency_sec": latency, "output_text": generated_text}
 
 if __name__ == "__main__":
-    # Example prompts
     prompts = [
         "Hello world",
         "Once upon a time",
@@ -39,4 +43,5 @@ if __name__ == "__main__":
     df = pd.DataFrame(results)
     df.to_csv("benchmarks/results.csv", index=False)
     print("Benchmark results saved to benchmarks/results.csv")
+
 
