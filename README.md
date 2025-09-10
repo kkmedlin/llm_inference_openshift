@@ -22,8 +22,8 @@ llm-inference-openshift/
 │   ├── k8s-service.yaml      # service definition
 │   └── helm-chart/           # optional, nice-to-have
 ├── models/
-│   ├── download_model.py     # script to pull a small LLM (e.g. distilGPT2, quantized)
-│   └── run_inference.py      # simple API for CPU inference
+│   ├── download_model.py     # script to pull a small LLM (e.g. distilGPT2, quantized); caches model locally
+│   └── run_inference.py      # simple API for CPU inference; runs demo
 ├── benchmarks/
 │   ├── benchmark.py          # compare PyTorch vs ONNX Runtime vs llama.cpp
 │   └── results.csv           # benchmark results
