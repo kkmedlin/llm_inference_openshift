@@ -1,1 +1,53 @@
-# llm_inference_openshift
+# LLM Inference on OpenShift (CPU-Only)
+
+*Work in Progress — this project is under active development.*
+
+This repository explores **efficient deployment of lightweight large language models (LLMs)** in CPU-only environments using **OpenShift/Kubernetes**. The goal is to demonstrate practical approaches to **scalable inference** when GPU resources are unavailable.
+
+## Motivation
+Most LLM discussions assume access to powerful GPU clusters, but many real-world use cases require **CPU-only inference**.  
+This repo investigates:
+- Deploying quantized or distilled LLMs as microservices.  
+- Benchmarking inference performance across runtimes (PyTorch, ONNX Runtime, `llama.cpp`).  
+- Demonstrating horizontal scaling under simulated load on Kubernetes/OpenShift.  
+
+## Planned Structure
+llm-inference-openshift/
+│
+├── README.md
+├── deployment/
+│ ├── Dockerfile # container for quantized model inference
+│ ├── k8s-deployment.yaml # deployment config
+│ ├── k8s-service.yaml # service definition
+│ └── helm-chart/ # optional, nice-to-have
+│
+├── models/
+│ ├── download_model.py # script to pull a small LLM (e.g. distilGPT2, quantized)
+│ └── run_inference.py # simple API for CPU inference
+│
+├── benchmarks/
+│ ├── benchmark.py # compare PyTorch vs ONNX Runtime vs llama.cpp
+│ └── results.csv # benchmark results
+│
+└── notebooks/
+└── analysis.ipynb # plots: latency, throughput, memory usage
+
+
+## Quickstart
+
+For now, the repo contains a **basic inference demo** using Hugging Face Transformers on CPU.
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/llm-inference-openshift.git
+   cd llm-inference-openshift
+   ```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Rune a test inference:
+```bash
+python models/run_inference.py
+```
+
