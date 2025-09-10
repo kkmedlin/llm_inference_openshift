@@ -20,5 +20,16 @@ def main():
     model.to(device)
 
     # Sample prompt
-    promp
+    prompt = "Once upon a time"
+    inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
+    # Generate text
+    outputs = model.generate(**inputs, max_new_tokens=50)
+
+    # Decode and print
+    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    print("Prompt:", prompt)
+    print("Generated:", generated_text)
+
+if __name__ == "__main__":
+    main()
