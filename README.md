@@ -85,10 +85,10 @@ See `requirements.txt` for full details.
 
 ## Learning & Reflection
 
-I’m using this project not only to build ML and deployment skills, but also to **learn intentionally**.  
+I’m using this project not only to build ML and deployment skills, but also to learn intentionally.  
 I maintain a daily reflection file here: `reflections/learning.md` with questions I ask myself each day to track progress, evaluate design decisions, and improve understanding.
 
-I also use ChatGPT to guide learning, troubleshoot issues, and suggest design patterns — all reflected transparently in `learning.md`.
+I also use ChatGPT to guide learning, troubleshoot issues, and suggest design patterns.
 
 ## License
 MIT License

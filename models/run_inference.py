@@ -1,9 +1,8 @@
-# TODO:
+# models/run_inference.py:
 # Load a small Hugging Face Model (e.g., distilgpt2)
 # Run one sample inference (predict next word from a short prompt).
 # Print output
 
-# models/run_inference.py
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
@@ -20,7 +19,7 @@ def main():
     model.to(device)
 
     # Sample prompt
-    prompt = "Once upon a time"
+    prompt = "Hello My Name is Karen Medlin."
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Generate text
