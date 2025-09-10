@@ -48,11 +48,20 @@ For now, the repo contains a **basic inference demo** using Hugging Face Transfo
 ```bash
 pip install -r requirements.txt
 ```
-3. Run a test inference:
+3. Download and cache Hugging Face model:
+```bash
+python models/download_model.py
+```
+Note: Running `models/download_model.py` downloads and caches the model locally (typically in `~/.cache/huggingface/transformers` on Linux/macOS or `%USERPROFILE%\.cache\huggingface\transformers` on Windows). 
+After the first run, `run_inference.py` will use the cached model, so you don’t need to download it again.
+
+4. Run a test inference:
 ```bash
 python models/run_inference.py
 ```
 
+Note: For a learning perspective, see `reflections/learning.md` to explore daily reflective questions
+and understand how design decisions were made during development.
       
 ## Requirements
 - Python 3.10+
@@ -73,6 +82,13 @@ See `requirements.txt` for full details.
 - [ ] Containerize with Docker + OpenShift deployment configs
 - [ ] Add Helm chart for reproducible deployment
 - [ ] Simulate load testing & autoscaling on OpenShift
+
+## Learning & Reflection
+
+I’m using this project not only to build ML and deployment skills, but also to **learn intentionally**.  
+I maintain a daily reflection file here: `reflections/learning.md` with questions I ask myself each day to track progress, evaluate design decisions, and improve understanding.
+
+I also use ChatGPT to guide learning, troubleshoot issues, and suggest design patterns — all reflected transparently in `learning.md`.
 
 ## License
 MIT License
