@@ -1,0 +1,11 @@
+# Core dependencies
+torch>=2.0.1
+transformers>=4.35.0
+numpy>=1.25.0
+
+# Optional but recommended for benchmarks/notebooks
+pandas>=2.1.0
+matplotlib>=3.8.0
+
+# For ONNX Runtime inference (future work)
+onnxruntime>=1.17.0
