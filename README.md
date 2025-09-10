@@ -13,7 +13,7 @@ This repo investigates:
 
 ## Planned Structure
 ```text
-llm-inference-openshift/
+llm_inference_openshift/
 │
 ├── README.md
 ├── deployment/
@@ -28,7 +28,10 @@ llm-inference-openshift/
 │   ├── benchmark.py          # compare PyTorch vs ONNX Runtime vs llama.cpp
 │   └── results.csv           # benchmark results
 └── notebooks/
-    └── analysis.ipynb        # plots: latency, throughput, memory usage
+│   └── analysis.ipynb        # plots: latency, throughput, memory usage
+├── reflections/
+    └── learning.md           # daily reflection questions to promote learning
+
 
 ```
 
@@ -38,8 +41,8 @@ For now, the repo contains a **basic inference demo** using Hugging Face Transfo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/llm-inference-openshift.git
-   cd llm-inference-openshift
+   git clone https://github.com/kkmedlin/llm_inference_openshift.git
+   cd llm_inference_openshift
    ```
 2. Install dependencies:
 ```bash
