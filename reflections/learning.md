@@ -16,19 +16,22 @@ Distilled models can be less fact-sensitive, more biased, and use less context f
 
 ### Implementation
 - Did I follow best practices for Python, modularity, and code readability?
+
 I believe so. The scripts are well-documents and the files well organized.
 
 - Are there any parts of the code I could refactor to be cleaner or more reusable?
+
 The only script there is is run_inference.py and download_model.py. They are short and appear well-documented to me.
 
 - How does caching the model locally affect workflow and performance?
+
 Essentially, it downloads model parameters and an instance of the model onto your local machine. This way you can run subsequent iterations locally, which streamlines workflow and improves performance. One less road to travel. NOTE: Caching helps offline work, and speeds up iterative development.
 
 ### Benchmarks / Performance
 - What patterns do I notice in latency measurements?
 I still need to do this...
 - Which runtime (PyTorch, ONNX) seems more efficient for CPU?
-OOO, this seems like a fund question. Let's create a test.
+OOO, this seems like a fun question. Let's create a test.
 - How could I structure benchmarks to be more informative?
 Got to seem them first.
 
